@@ -28,7 +28,8 @@ notepad.exe worldcup.txt
 
 
 
-Unix
+## Unix
+
 vi staff.text[enter]
 press I for insert mode
 press Esc for command mode

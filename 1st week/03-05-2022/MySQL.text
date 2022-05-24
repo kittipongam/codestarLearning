@@ -1,0 +1,19 @@
+## for ubantu
+sudo apt install mysql-server
+sudo mysql
+
+
+## Window 
+https://codestar.work/mysql-windows.pdf
+
+	install MSVC runtime latest version Microsoft visual C++ runtime
+
+download MySQL community server	
+
+C:\
+	‘--tools
+		‘--mysql
+			‘--bin
+				‘-- mysqld.exe  server | daemon
+				‘-- mysql.exe  	client
+
