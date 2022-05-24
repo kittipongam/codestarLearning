@@ -157,7 +157,7 @@ Variable
 >
 
 
-
+## 3.Ternary Operator
 
 
 
