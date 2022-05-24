@@ -1,0 +1,61 @@
+# For read
+
+Introduction -> https://codestar.work/introduction.pdf
+Unix : Monday -> https://codestar.work/java-unix.pdf
+window :https://codestar.work/mysql-windows.pdf
+
+
+uname  		: Unix name
+Uname -a		: Unix name with detail
+
+ssh bruce.wayne@oldschool.city[enter]
+Enter Password: hero [enter]
+
+pwd			:Print working Directory
+mkdir test		:Make Directory name test
+rmdir test		:delete Directory name test
+ls			:list
+ls -l			:list with detail
+touch test		:reset time of file or directory
+touch test	.txt	:create empty file
+rm test.txt	:remove file
+
+
+create text editor on “windows” name notepad.exe
+notepad.exe worldcup.txt
+
+
+
+
+
+Unix
+vi staff.text[enter]
+press I for insert mode
+press Esc for command mode
+:x[enter] write file and exit
+:w[enter] write
+:wq write file and quit
+:q Quit
+:q! Quit and cancel editing
+
+
+cat f1.txt f2.txt f3.txt concatenate
+echo		echo text(print text)
+cp		coppy
+mv		move
+cd		change directory
+
+cd test 	Go inside directory
+cd.. 		go to parent directory
+cd. 		goto current directory
+cd~ 		goto home  directory
+cd 		same as cd~ 
+
+cp staff.text test coppy file name test
+mv test/staff.txt backup move from test/staff.txt to backup
+
+unix common directory
+/ 	Root Directory
+~ 	Home Directory of Current User
+. 	Current Directory
+.. 	Parent Directory
