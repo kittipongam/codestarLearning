@@ -30,8 +30,8 @@ following this topic
       </ol>
       <ol> 4th week
             <li> 23/05/2022 - Angular(create button + web service of crypto currency) </li>
-            <li> 24/05/2022 - </li>
-            <li> 25/05/2022 - </li>
+            <li> 24/05/2022 - Angular input and array</li>
+            <li> 25/05/2022 - React </li>
             <li> 26/05/2022 - </li>
       </ol>
 </ol>
