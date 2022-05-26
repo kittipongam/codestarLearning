@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+//function กดปุ่มเล้ว นับเลขเรื่อยๆ
+<html>
+    <head> <title>iCoffee</title> </head>
+    
+    <body>
+     <div id="main">
+      ...
+     </div>
+    
+    
+    
+     <script src="https://unpkg.com/vue@3"></script>
+     <script>
+     //function click and add msg on body
+
+    
+     var App= {}    	 
+     var Counter ={ }
+     Counter.data = function(){
+        		 
+        		 return{ current:0 }
+        	 }
+     Counter.template = `<button @Click="increase()"> Next {{current}}  </button>
+        		 <p> {{current}} </p>`
+     Counter.methods={}
+     Counter.methods.increase = function(){
+        				 
+        				 this.current++
+        				 if (this.current >9){
+        				 this.current =0
+        				 }
+        			 }
+    
+    
+     Vue.createApp(Counter).mount("#main")
+
+</script>
+    
+    
+    
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head> <title>iCoffee</title> </head>
+    
+    <body>
+     <div id="main">
+      ...
+     </div>
+    
+    
+    
+     <script src="https://unpkg.com/vue@3"></script>
+     <script>
+      var Love = {}
+      Love.template=`<button @Click="show()">LOVE</button>`
+      Love.methods ={}
+      Love.methods.show = function () {
+     			 alert("I love You")
+     				   }
+      Vue.createApp(Love).mount("#main")   		   
+      // แปะปุ่มที่ id = main
+      
+
+
+
+</script>
+    
+    
+    
+</body>
+</html>
+

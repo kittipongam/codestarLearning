@@ -15,7 +15,7 @@
             var response= await fetch(url)
             var data = await response.text()
             var e = document.getElementById("target")
-            e.innerText = data
+            e.innerText = data.data.amount
 
         } 
     </script>

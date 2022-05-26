@@ -8,7 +8,9 @@
     <button onclick="refresh()">refresh</button>
 </head>
 <body>
+
     <div id="target">...</div>
+    
     <script>
         function refresh(){
             var url="https://api.coinbase.com/v2/prices/BTC-USD/spot"
@@ -17,10 +19,18 @@
         function convert(response){
             return response.json()
         }
+        var e =document.getElementById("target")
         function show(data){
-            var e =document.getElementById("target")
+            
             e.innerText=data.data.amount
         }
+        
+
+
+   
+        
+
+
     </script>
 </body>
 </html>

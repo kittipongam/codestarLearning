@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>iCoffee</title>
+    </head>
+    <body>
+     <input class= city>
+     <button class="sample" onclick="show()">Love</button>
+     /// เพื่มข้อมูลไปที่ตัว body โดย function add,show ทำหน้าที่เหมือนกันแต่คนละคำสั่ง
+     <input class="task">
+     <button onclick="add()">Add</button>
+     /// เพื่มข้อมูลไปที่ตัว body โดย function add,show ทำหน้าที่เหมือนกันแต่คนละคำสั่ง
+     <script src="jquery.js"></script>
+	  <script>
+	 
+      function add(){
+     	 var text = $(".task").val()
+     	 $(".task").val("")
+     	 var current = $("body").html() //read
+     	 current = current + "<br>" + text
+     	 $("body").html(current)
+      }    
+  	 
+   
+      function show(){
+     	 var city = $(".city").val()
+     	 $("body").append("<br>" + city)
+     	 $(".city").val("")
+      }
+      
+      
+     </script>
+    </body>
+</html>

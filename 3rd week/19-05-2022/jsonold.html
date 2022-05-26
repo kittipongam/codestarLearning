@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+    <button onclick="refresh()">refresh</button>
+</head>
+<body>
+    <div id="target">...</div>
+    <div id="targetB">...</div>
+    <div id="targetS">...</div>
+    <script>
+        var result=[]
+       async function refresh(){
+            var url="https://api.coinbase.com/v2/prices/BTC-USD"
+
+           await fetch(url+"/buy").then(convert).then(show)
+           await fetch(url+"/sell").then(convert).then(show)
+        }
+        function convert(response){
+            return response.json()
+        }
+        function show(data){
+            result.unshift(data)
+            if(result.length == 2){
+            var spread =  result[0].data.amount - result[1].data.amount 
+            var e = document.getElementById("target")
+            e.innerText = "Spread is " + spread.toFixed(2)
+            var f = document.getElementById("targetB")
+            f.innerText="Buy price = " + result[0].data.amount
+            var g = document.getElementById("targetS")
+            g.innerText="Buy price = " + result[1].data.amount
+            }
+            
+        }
+    </script>
+</body>
+</html>

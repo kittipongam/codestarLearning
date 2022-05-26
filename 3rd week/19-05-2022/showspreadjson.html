@@ -1,3 +1,5 @@
+
+   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +13,21 @@
     <div id="target">...</div>
     <div id="targetB">...</div>
     <div id="targetS">...</div>
+
+
+    <div class="timmerWatch">
+        <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+    </div>
+
     <script>
         var result=[]
-        function refresh(){
+        async function refresh(){
+            startTime()
             var url="https://api.coinbase.com/v2/prices/BTC-USD"
 
-            fetch(url+"/buy").then(convert).then(show)
-            fetch(url+"/sell").then(convert).then(show)
+          await  fetch(url+"/buy").then(convert).then(show)
+          await  fetch(url+"/sell").then(convert).then(show)
+            
         }
         function convert(response){
             return response.json()
@@ -28,12 +38,57 @@
             var spread =  result[0].data.amount - result[1].data.amount 
             var e = document.getElementById("target")
             e.innerText = "Spread is " + spread.toFixed(2)
-            }
             var f = document.getElementById("targetB")
             f.innerText="Buy price = " + result[0].data.amount
             var g = document.getElementById("targetS")
-            g.innerText="Buy price = " + result[1].data.amount
+            g.innerText="Sell price = " + result[1].data.amount
+            }
+            
         }
+
+        var timeToRefresh =1;
+        var seconds = 00;
+        var tens = 00;
+        var appendTens = document.getElementById("tens");
+        var appendSeconds = document.getElementById("seconds");
+        var Interval;
+        function startTime() {
+            clearInterval(Interval);
+            Interval = setInterval(startTimer, 10); 
+        }
+        function resetTime() {
+            clearInterval(Interval);
+            tens = "00";
+            seconds = "00";
+            appendTens.innerHTML = tens;
+            appendSeconds.innerHTML = seconds;
+            result=[]
+                
+        }
+        async function startTimer() {
+            tens++;
+            if (tens < 9) {
+                appendTens.innerHTML = "0" + tens;
+            }
+            if (tens > 9) {
+                appendTens.innerHTML = tens;
+            }
+            if (tens > 99) {
+                seconds++;
+                appendSeconds.innerHTML = "0" + seconds;
+                tens = 0;
+                appendTens.innerHTML = "0" + 0;
+            }
+            if (seconds == timeToRefresh) {   
+                
+                await resetTime()
+                await refresh()
+            }
+            
+            if (seconds > 9) {
+                appendSeconds.innerHTML = seconds;
+            }
+}
     </script>
 </body>
 </html>

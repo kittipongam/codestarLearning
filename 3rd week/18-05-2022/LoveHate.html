@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+//function click and add msg on body
+<html>
+    <head> <title>iCoffee</title> </head>
+    
+    <body>
+     <div id="main">
+      ...
+     </div>
+    
+    
+    
+     <script src="https://unpkg.com/vue@3"></script>
+     <script>
+     //function click and add msg on body
+
+    
+     var App= {}    	 
+     App.data = function(){
+        	 return {list:[],currentlove:0,currenthate:0}
+        	 }
+     App.template = `
+        	 <button @Click="addLove()">LOVE {{currentlove}}</button>
+        	 <button v-on:click="addHate()">HATE{{currenthate}}</button><br>
+        	 <b>{{currentlove+currenthate}}</b>
+        	 <p v-for="i in list">{{i}}</p>
+        	 
+        	 `
+     App.methods={}
+     App.methods.addLove = function(){this.list.push("Love ")
+        			   this.currentlove++    
+        			   }
+     App.methods.addHate = function(){this.list.push("Hate")
+        			   this.currenthate++    
+        			 }
+    
+     Vue.createApp(App).mount("#main")
+</script>
+    
+    
+    
+</body>
+</html>
+
